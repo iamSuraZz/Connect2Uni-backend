@@ -14,12 +14,12 @@ const app = express()
 require('dotenv').config({ path: '.env' })
 require('./utils/passport'); 
 
-// app.use(cors({
-//     origin: [
-//         "http://localhost:5173" 
-//     ],
-//     credentials: true
-// }));
+app.use(cors({
+    origin: [
+        "https://33ca-152-59-236-38.ngrok-free.app" 
+    ],
+    credentials: true
+}));
 
 const studentRoutes = require('../src/routes/studentsRoutes')
 const universityRoutes = require('../src/routes/universityRoutes')
