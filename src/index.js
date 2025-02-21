@@ -16,7 +16,7 @@ require('./utils/passport');
 
 app.use(cors({
     origin: [
-        "https://33ca-152-59-236-38.ngrok-free.app" 
+        "https://6de8-152-59-199-254.ngrok-free.app" 
     ],
     credentials: true
 }));
