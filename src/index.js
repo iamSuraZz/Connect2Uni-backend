@@ -15,9 +15,13 @@ require('dotenv').config({ path: '.env' })
 require('./utils/passport'); 
 
 app.use(cors({
-    origin: [
-        "https://6de8-152-59-199-254.ngrok-free.app" 
-    ],
+    origin: function (origin, callback) {
+        if (origin && origin.match(/^https:\/\/[a-z0-9-]+\.ngrok-free\.app$/)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true
 }));
 
